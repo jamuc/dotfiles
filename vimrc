@@ -9,10 +9,6 @@ set shiftwidth=2
 
 "Activate syntax highlighting
 syntax on
-"Switch to solarized dark
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
 
 "Set the leader key
 let mapleader = ","
