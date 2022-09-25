@@ -7,8 +7,9 @@ set tabstop=2
 set expandtab
 set shiftwidth=2
 
-"set hybrid line numbers
-set number relativenumber
+"Set hybrid numbering
+set number
+set relativenumber
 
 "Activate syntax highlighting
 syntax on
