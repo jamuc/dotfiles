@@ -44,6 +44,26 @@ on-focus-changed = "move-mouse window-lazy-center"
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
 automatically-unhide-macos-hidden-apps = false
 
+# Keep app windows anchored to their workspace and jump there when they open.
+[[on-window-detected]]
+    if.app-id = 'com.mitchellh.ghostty'
+    run = ['move-node-to-workspace G', 'workspace G']
+[[on-window-detected]]
+    if.app-id = 'net.whatsapp.WhatsApp'
+    run = ['move-node-to-workspace W', 'workspace W']
+[[on-window-detected]]
+    if.app-id = 'com.spotify.client'
+    run = ['move-node-to-workspace S', 'workspace S']
+[[on-window-detected]]
+    if.app-id = 'com.microsoft.teams2'
+    run = ['move-node-to-workspace T', 'workspace T']
+[[on-window-detected]]
+    if.app-id = 'com.microsoft.teams'
+    run = ['move-node-to-workspace T', 'workspace T']
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome'
+    run = ['move-node-to-workspace C', 'workspace C']
+
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
 [key-mapping]
@@ -131,10 +151,12 @@ automatically-unhide-macos-hidden-apps = false
     alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
     alt-b = 'workspace B'
     alt-c = 'workspace C'
+    alt-ctrl-c = ['workspace C', 'exec-and-forget open -a "Google Chrome"']
     alt-d = 'workspace D'
     alt-e = 'workspace E'
     alt-f = 'workspace F'
     alt-g = 'workspace G'
+    alt-ctrl-g = ['workspace G', 'exec-and-forget open -a Ghostty']
     alt-i = 'workspace I'
     alt-m = 'workspace M'
     alt-n = 'workspace N'
@@ -143,10 +165,13 @@ automatically-unhide-macos-hidden-apps = false
     alt-q = 'workspace Q'
     alt-r = 'workspace R'
     alt-s = 'workspace S'
+    alt-ctrl-s = ['workspace S', 'exec-and-forget open -a Spotify']
     alt-t = 'workspace T'
+    alt-ctrl-t = ['workspace T', 'exec-and-forget open -a "Microsoft Teams"']
     alt-u = 'workspace U'
     alt-v = 'workspace V'
     alt-w = 'workspace W'
+    alt-ctrl-w = ['workspace W', 'exec-and-forget open -a WhatsApp']
     alt-x = 'workspace X'
     alt-y = 'workspace Y'
     alt-z = 'workspace Z'
